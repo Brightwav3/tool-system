@@ -1,0 +1,27 @@
+# Dependencies
+node_modules/
+
+# Build and TypeScript
+dist/
+*.tsbuildinfo
+
+# Tests and logs
+coverage/
+test-results/
+*.log
+
+# Environment / runtime state
+.env
+.env.*
+!.env.example
+tmp/
+temp/
+*.pid
+
+# OS and editor files
+.DS_Store
+Thumbs.db
+Desktop.ini
+.idea/
+*.swp
+*~
