@@ -46,7 +46,11 @@ const runtime = new ToolRuntime({
 });
 await runtime.start();
 
-const report = await runtime.execute({ tool: "open_app", args: { app: "spotify" } }, signal);
+const report = await runtime.execute({
+  tool: "open_app",
+  args: { app: "spotify" },
+  sessionId: "live-session-1", // optional host correlation
+}, signal);
 
 if (report.outcome.kind === "error") {
   report.outcome.error.code;      // typed, never a prose string
@@ -55,6 +59,12 @@ if (report.outcome.kind === "error") {
 ```
 
 A caller may request an execution. It cannot grant itself one: a denied request returns `policy_denied`, and a request needing approval returns `confirmation_required` — an outcome to escalate, never a flag the requester can resubmit.
+
+Realtime host adapters may attach an optional `sessionId` to an execution
+request. Tool handlers receive the same value through `ToolContext`, which lets
+the host correlate side effects, evidence, and traces with a live conversation.
+Tool System treats it as caller-supplied context; it does not interpret or
+persist the session identity.
 
 ## CLI
 
