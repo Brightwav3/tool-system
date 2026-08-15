@@ -8,6 +8,9 @@
  * There is deliberately no shell entry point. A shell string composed from an
  * argument means any value that reaches a tool can reach an interpreter; an
  * argv array cannot be reinterpreted that way regardless of its contents.
+ *
+ * INV-003 — every host effect passes one brokered, deniable place.
+ * ADR 0002 — docs/decisions/0002-broker-is-the-only-host-path.md
  */
 
 import { toolError, type ToolError } from "./contracts.js";

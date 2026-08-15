@@ -5,6 +5,8 @@
  * not execute: keeping registration separate from execution means the set of
  * capabilities can be inspected — by an agent, by a test, by the CLI — without
  * the possibility of invoking one.
+ *
+ * ADR 0002 — docs/decisions/0002-broker-is-the-only-host-path.md
  */
 
 import {
