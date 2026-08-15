@@ -247,7 +247,7 @@ export class ToolRuntime {
     guards.lastStartedAt = now;
 
     try {
-      const outcome = await this.#invoke(handler, declaration, effective, requestId, signal);
+      const outcome = await this.#invoke(handler, declaration, effective, requestId, request.sessionId, signal);
 
       if (idempotencyWindowMs !== undefined && outcome.kind !== "error") {
         guards.replay.set(replayKey, { at: this.#clock.now(), outcome });
@@ -282,6 +282,7 @@ export class ToolRuntime {
     declaration: ToolDeclaration,
     args: Readonly<Record<string, string | number | boolean>>,
     requestId: string,
+    sessionId?: string,
     external?: AbortSignal,
   ): Promise<ExecutionOutcome> {
     const controller = new AbortController();
@@ -311,6 +312,7 @@ export class ToolRuntime {
       const invocation = handler(args, {
         signal: controller.signal,
         requestId,
+        ...(sessionId ? { sessionId } : {}),
         services: this.#services,
       }).then(
         (outcome): ExecutionOutcome => outcome,

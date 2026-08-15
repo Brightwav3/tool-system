@@ -24,6 +24,7 @@ import {
 export interface ToolContext {
   readonly signal: AbortSignal;
   readonly requestId: string;
+  readonly sessionId?: string;
   readonly services: ToolServices;
 }
 

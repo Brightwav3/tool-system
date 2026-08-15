@@ -97,6 +97,8 @@ export interface ExecutionRequest {
   readonly args: ExecutionArguments;
   /** Caller-supplied identifier echoed into the outcome and the trace. */
   readonly requestId?: string;
+  /** Optional live session identity supplied by a host adapter. */
+  readonly sessionId?: string;
 }
 
 /* ------------------------------------------------------------------ *
