@@ -11,6 +11,10 @@
  *
  * Bindings resolve before policy on purpose: policy must judge the arguments the
  * tool will actually receive, not the subset the caller happened to type.
+ *
+ * ADR 0001 — docs/decisions/0001-pipeline-order-is-the-contract.md
+ * ADR 0003 — docs/decisions/0003-policy-enforcement-point.md
+ * ADR 0004 — docs/decisions/0004-outcomes-are-a-union.md
  */
 
 import { resolveBindings, type ContextProvider } from "./bindings.js";

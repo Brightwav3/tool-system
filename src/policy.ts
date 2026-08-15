@@ -5,6 +5,8 @@
  * it decides. Separating the two means the enforcement point can be correct and
  * tested before any policy engine exists, and the engine can later replace the
  * decider without a contract change.
+ *
+ * ADR 0003 — docs/decisions/0003-policy-enforcement-point.md
  */
 
 import type { ExecutionArguments, SideEffectClass, ToolDeclaration } from "./contracts.js";

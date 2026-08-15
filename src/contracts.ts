@@ -4,6 +4,9 @@
  * Every type here crosses the public boundary. Consumers are expected to be
  * software agents, so shapes are explicit, discriminated, and machine-checkable
  * rather than convenient for prose.
+ *
+ * ADR 0004 — docs/decisions/0004-outcomes-are-a-union.md
+ * ADR 0005 — docs/decisions/0005-bindings-are-declared.md
  */
 
 /* ------------------------------------------------------------------ *

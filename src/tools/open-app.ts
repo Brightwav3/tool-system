@@ -4,6 +4,12 @@
  * It exists to prove the contract carries a real capability end to end, and to
  * be the shape every later tool is written against.
  *
+ * INV-001 — the documented exception. This is the *only* tool declared inside
+ * Tool System. A capability an assistant calls goes to host-tools, or through
+ * the Delegation Broker if it cannot answer within its turn. Do not add a
+ * second reference tool here.
+ * Ecosystem ADR 0001 — docs/decisions/0001-capability-homes.md
+ *
  * Note what it does not do. It does not detect the platform, build a command
  * string, fall back to typing into a launcher, or import a spawn primitive. It
  * maps a declared application name to an allowlisted executable and asks the

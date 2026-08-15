@@ -5,6 +5,8 @@
  * instead of the runtime quietly filling it in during dispatch. The difference
  * matters because an implicit argument that is visible in the declaration can be
  * discovered, audited, and tested; one hidden in dispatch code cannot.
+ *
+ * ADR 0005 — docs/decisions/0005-bindings-are-declared.md
  */
 
 import {
